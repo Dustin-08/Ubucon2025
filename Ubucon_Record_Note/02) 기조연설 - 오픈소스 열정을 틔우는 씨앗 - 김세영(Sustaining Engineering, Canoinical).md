@@ -1,0 +1,59 @@
+- 10:30 ~ 11:00
+### 오픈소스 열정을 틔우는 씨앗 - 김세영(Sustaining Engineering, Canoinical)
+- Seed
+	- raw로 사면 expensive
+	- growth하면 어떨까
+- Equipment - Toy Project
+	- 3d 프린터
+	- 스마트팜
+	- 프레임
+	- 아두이노 온습도계
+		- 서버에 데이터 송신 및 웹페이지로 체킹
+		- 온습도가 안맞는 케이스 생겼지만 재미로 만듦
+	- 바질
+- OS 점유율
+	- 이전 - MS 점유율 상당히 높음
+	- 현재 - 안드로이드, iOS 등
+- Software Wars
+	- Empire of MS
+- MS OSS(Github)
+	- terminal
+	- WSL
+- 업무
+	- Sustaining Engineering
+		- 소스 코드 서포트 지원팀
+		- 안되는 케이스 reporting 시
+			- CLI로 이상 여부 파악
+				- 안될시 Sustaining Eengineering에서 코드 파악 및 패치 진행
+- Case Fetch Tech Stack
+	- Kernel
+		- Upstream에 패치를 어떻게 보냄?
+			- 이멜로 스레드 보내고 거기서 리뷰 진행
+	- Github
+		- charm
+		- juju
+	- Launchpad git
+		- legacy charm
+		- mass
+	- SRU process
+		- Server/Openstack pkgs
+			- release에 맞게 배포 및 관리
+- OSS
+	- n8n - 자동화
+- Communication
+	- OSS 프로젝트 참여시
+		- 기술이나 그런것도 패치시 중요하지만
+		- 설명 등이 있어야 패치 이해 등이 가능하므로
+		- 커뮤니케이션이 중요하다
+- AI(Artificial Intelligence)
+	- 바이브 코딩 - 커뮤니케이션
+	- 포트폴리오
+		- 주니어 상태에서도 기술 스택 쌓기
+		- lama cpp
+- 산천대축(26) - 괴?
+	- 김도인
+- 프로젝트
+	- 재미 -> 열성 + 알파
+	- 토이 플젝
+- Canonical
+	- 채용

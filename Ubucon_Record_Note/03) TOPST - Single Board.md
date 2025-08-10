@@ -1,0 +1,93 @@
+- 11:00~11:30
+### TOPST D3-G Single Board Computer에 Ubuntu 적용 사례 소개
+- Telechips
+	- 모빌리티 쪽 납품
+	- 싱글보드 만든 이력은 없었음
+	- B2B 사업에 Focus 되있었음
+	- 차량용 SoC 전문 반도체 기업
+- 개방형 생태계에 뛰어들자
+	- TOPST(Total Opensource Platform for System development and Training)
+		- 라즈베리 파이, 아두이노와 호환되는 싱글보드 컴퓨터 제공
+- 웹사이트
+	- https://topst.ai/ 
+	
+- 총 3가지 모델
+	- D3-G
+		- Ap
+	- AI-G
+		- NPU
+			- Edge-Computing
+				- 종단간 인퍼런스 및 행동 정보 제공
+	- VCP-G
+		- 컨트롤
+			- 로봇 팔 or 바퀴
+- 3가지를 다 합치면 뭐든 다 나옴
+	- 교육 및 산업
+#### D3-G
+- 개방형에 적절한 OS가 필요
+- 독립적인 AP 2개 + MCU
+	- IPC로 통신
+- Yocto
+	- Embedded Linux 빌드 및 배포하기 위한 Framework
+		- 사용자 정의 Linux
+		- Bitbake, Recipe 기반 빌드 시스템
+		- 유지 보수의 편의성 제공
+	- 요구사항에 맞는 OS를 일일이 세팅하기 어려우므로 Yocto를 통해서 리눅스 커널을 빌드함
+	- 빌드 환경
+		- Poky based Yocto 4(Kirkstone) from openembedded.org
+			- 이미지 플래싱 말고 제 3의 OS 빌드가 필요하다면?
+				- 별도의 SDK 툴킷만을 빌드 후 밀어 넣기
+		- **Weston Desktop** and Demo Website on localhost
+			- Demo Web-site on localhost
+			- COG browser
+			- WPE Webkit
+			- WPE Backend
+			- D3-G system
+- D3-G + Ubuntu
+	- Yocto에 대한 DIY Makers의 친숙도 문제
+	- 빌드/배포 산출물과 Open Package 사용성
+	- 완전 개방형 생태계에서의 솔루션 구축 필요성
+	- Word IT Show 2025 참가 예정
+- Yocto 산출물과 Ubuntu Repo Pckg Conflict 및 Dependencies 이슈
+- Yocto 데비안 패키지들 빼고
+	- 필수적인거 빼고 다 우분투로 가지고 오기
+- Ubuntu 적재 방법
+	- System Settings
+		- Enabling wayland in gdm/gnome
+- Ubuntu Gnome Desktop
+- D3-G vs RPI-4B Score 비교
+	- CPU 클럭수 등 13% 빠름
+	- 메모리도 15.3
+	- Dhrystone도 높음
+- 브라우저가 샌드박스 모드로 올라가면 안되기에 크로니움을 별도로 빌드해서 루트로 돌 수 있게 개발 후 성능평가 진행 - GPU
+- WebGL Aquarium
+	- webglsamples.org/aquarium/aquarium.html 
+- 개방형 생태계
+	- 기여방안 고찰
+	- Telechips 전체의 Consensus 필요
+	- https://github.com/topst-development 
+		- Source Code
+- 고민사항
+	- B2C 제품 이해
+	- 커뮤니티 운영
+	- Yocto 기반 빌드 시스템
+		- 빌드 시간 단축을 위한 sstate cache 및 mirror server 제공
+			- 빌드 없이 cache만 땡겨오면 됨
+			- +이미 완료된 빌드 결과물을 받아오는 것이기에 재빌드 과정 불필요
+	- 커널 호환성(Yocto <-> Ubuntu)
+		- D3-G v5.10.x  **VS** official Ubuntu 22.04 v15.5x
+- 향후
+	- 주변 기기 호환성
+		- WebCam, M.2 NVME SSD
+		- Display, USB, BT devices 등
+	- 추가 OS 환경
+		- ARM64 기반 Windows11 시스템
+	- 완벽한 통합 솔루션 제공
+		- 유로트럭 시뮬레이터를 이용한 usecase 작성중
+	- OSS 기여
+		- OpenUp을 통한 활동(oss.kr) - OSS 통합 지원 센터
+		- 교육, 비영리단체 기여
+	- 제품 다각화
+		- SoM, SiP 제품
+	- 한국산 브랜드 이미지 구축
+		- RPI, Radxa, Arduino 등과 경쟁
